@@ -2,12 +2,10 @@
   "version": 2,
   "builds": [
     {
-      "src": "**/*.js",
+      "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build",
-        "installCommand": "npm install",
-        "buildCommand": "npm run build"
+        "distDir": "build"
       }
     }
   ],
