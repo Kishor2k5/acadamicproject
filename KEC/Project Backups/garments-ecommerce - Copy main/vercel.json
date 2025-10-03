@@ -2,15 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "client/build"
+        "distDir": "build",
+        "installCommand": "cd client && npm install",
+        "buildCommand": "cd client && npm run build"
       }
     }
   ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/client/build/index.html" }
+    { "src": "/.*", "dest": "/index.html" }
   ]
 }
