@@ -1,0 +1,55 @@
+@startuml
+title G Fresh - Use Case Diagram
+
+actor Customer as C
+actor Admin as A
+actor "Payment Gateway" as PG
+actor "Shipping Provider" as SP
+actor "Auth Provider (Google)" as GP
+
+rectangle "G Fresh E-commerce System" {
+  usecase "Browse Products" as UC_Browse
+  usecase "View Product Details" as UC_View
+  usecase "Search Products" as UC_Search
+  usecase "Add to Cart" as UC_AddCart
+  usecase "Manage Cart" as UC_ManageCart
+  usecase "Checkout" as UC_Checkout
+  usecase "Make Payment" as UC_Payment
+  usecase "Track Order" as UC_Track
+  usecase "Sign Up / Sign In" as UC_Login
+  usecase "Manage Account" as UC_Account
+  usecase "Logout" as UC_Logout
+
+  usecase "Admin Login" as UA_Login
+  usecase "View Dashboard" as UA_Dashboard
+  usecase "Manage Products" as UA_Products
+  usecase "Manage Orders" as UA_Orders
+  usecase "Update Order Status / Print Label" as UA_UpdateOrder
+  usecase "View Analytics/Reports" as UA_Analytics
+  usecase "Manage Users" as UA_Users
+}
+
+C --> UC_Browse
+C --> UC_View
+C --> UC_Search
+C --> UC_AddCart
+C --> UC_ManageCart
+C --> UC_Checkout
+C --> UC_Track
+C --> UC_Login
+C --> UC_Account
+C --> UC_Logout
+
+A --> UA_Login
+A --> UA_Dashboard
+A --> UA_Products
+A --> UA_Orders
+A --> UA_UpdateOrder
+A --> UA_Analytics
+A --> UA_Users
+
+UC_Checkout .> UC_Payment : «includes»
+UC_Login --> GP : «optional»
+UA_UpdateOrder --> SP
+UC_Payment --> PG
+@enduml
