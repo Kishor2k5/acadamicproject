@@ -2,25 +2,15 @@
   "name": "garments-ecommerce",
   "version": "1.0.0",
   "description": "E-commerce application for garments",
-  "main": "server/server.js",
-  "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && npm start",
-    "client": "cd client && npm start",
-    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
-    "build": "cd client && npm install && npm run build",
-    "vercel-build": "cd client && npm install && npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "private": true,
-  "keywords": ["ecommerce", "garments", "react", "node", "mongodb"],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "concurrently": "^8.2.0"
+  "scripts": {
+    "vercel-build": "cd client && npm install && npm run build"
   },
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=6.0.0"
-  }
+  },
+  "workspaces": [
+    "client"
+  ]
 }
