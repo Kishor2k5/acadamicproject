@@ -1,0 +1,35 @@
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  margin: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.back-btn:hover { 
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+.back-icon { font-size: 1.1rem; }
+
+@media (prefers-color-scheme: dark) {
+  .back-btn { 
+    background: #111827;
+    color: #e5e7eb;
+    border-color: rgba(255,255,255,0.12);
+  }
+}
+
+@media (max-width: 768px) {
+  .back-btn { padding: 8px 12px; margin: 12px; }
+  .back-text { display: none; }
+}
